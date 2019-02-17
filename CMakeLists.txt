@@ -21,7 +21,7 @@ target_link_libraries(simple-websocket-server INTERFACE ${CMAKE_THREAD_LIBS_INIT
 # TODO 2020 when Debian Jessie LTS ends:
 # Remove Boost system, thread, regex components; use Boost::<component> aliases; remove Boost target_include_directories
 if(USE_STANDALONE_ASIO)
-    target_compile_definitions(simple-websocket-server INTERFACE USE_STANDALONE_ASIO)
+    target_compile_definitions(${PROJECT_NAME} INTERFACE USE_STANDALONE_ASIO)
     include(CheckIncludeFileCXX)
     CHECK_INCLUDE_FILE_CXX(asio.hpp HAVE_ASIO)
     if(NOT HAVE_ASIO)
